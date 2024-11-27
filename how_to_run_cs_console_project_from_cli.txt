@@ -1,0 +1,25 @@
+Microsoft Windows [Version 10.0.19045.5131]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\CSharp\CSharpNakovSolutions\Sample>dotnet new console
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring D:\CSharp\CSharpNakovSolutions\Sample\Sample.csproj:
+  Determining projects to restore...
+  Restored D:\CSharp\CSharpNakovSolutions\Sample\Sample.csproj (in 97 ms).
+Restore succeeded.
+
+D:\CSharp\CSharpNakovSolutions\Sample>ren Program.cs HelloWorld.cs
+
+D:\CSharp\CSharpNakovSolutions\Sample>start notepad++ HelloWorld.cs
+
+D:\CSharp\CSharpNakovSolutions\Sample>dotnet run Sample.csproj
+Hello World!
+
+D:\CSharp\CSharpNakovSolutions\Sample>
+
+D:\CSharp\CSharpNakovSolutions\Sample>dotnet new sln --project Sample.csproj
+The template "Solution File" was created successfully.
+
+Creating solution file is optional I guess.
