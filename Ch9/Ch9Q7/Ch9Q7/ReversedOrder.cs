@@ -1,8 +1,6 @@
 ﻿// Write a method that prints the digits of a given decimal number in a 
 // reversed order. For example 256, must be printed as 652.
 
-using System.ComponentModel;
-
 class ReversedOrder
 {
     static void Main()
