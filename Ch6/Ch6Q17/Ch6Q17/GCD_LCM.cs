@@ -2,8 +2,6 @@
 // divisor (GCD) and their least common multiple (LCM). You may use 
 // the formula LCM(a, b) = |a*b| / GCD(a, b). 
 
-using System.Globalization;
-
 class GCD_LCM
 {
     static void Main()
