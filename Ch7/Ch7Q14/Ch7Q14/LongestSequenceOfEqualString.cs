@@ -2,8 +2,6 @@
 // elements in a matrix. A sequence in a matrix we define as a set of 
 // neighbor elements on the same row, column or diagonal.
 
-using System.Security.Cryptography;
-
 class LongestSequenceOfEqualString
 {
     static void Main()
