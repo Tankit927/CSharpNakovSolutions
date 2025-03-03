@@ -5,8 +5,6 @@
 // - If we are given the numbers {3, 1, -7, 35, 22}, there are no subsets 
 // with sum 0.
 
-using System.Diagnostics.CodeAnalysis;
-
 class SubsetsOfSumZero
 {
     static void Main()
