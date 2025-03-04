@@ -43,7 +43,7 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 11. [BitInPositionP](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q11/Ch3Q11/BitInPositionP.cs)
 12. [Check Bit](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q12/Ch3Q12/CheckBit.cs)
 13. [Change Required Bit](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q13/Ch3Q13/ChangeRequiredBit.cs)
-14. [Check Prime](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q14/Ch3Q14/CheckPrime.cs) *Need to complete till Ch-6 Loops*
+14. [Check Prime](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q14/Ch3Q14/CheckPrime.cs) *(Need to complete till Ch-6 Loops)*
 15. [Exchange Some Bits](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q15/Ch3Q15/ExchangeSomeBits.cs)
 16. [Exchange Bits](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch3/Ch3Q16/Ch3Q16/ExchangeBits.cs)
 
@@ -54,11 +54,11 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 4. [Num in Columns](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q4/Ch4Q4/NumInColumns.cs)
 5. [Divisible by Five](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q5/Ch4Q5/DivisibleByFive.cs)
 6. [Find Greatest](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q6/Ch4Q6/FindGreatest.cs)
-7. [Sum of Integers](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q7/Ch4Q7/SumOfIntegers.cs) *Need to complete till Ch-9 Methods*
-8. [Find Greatest](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q8/Ch4Q8/FindGreatest.cs) *Need to complete till Ch-9 Methods*
-10. [Print Nums](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q10/Ch4Q10/PrintNums.cs) *Need to complete till Ch-9 Methods*
-11. [Fibonacci](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q11/Ch4Q11/Fibonacci.cs) *Need to complete till Ch-9 Methods*
-12. [Sum of Series](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q12/Ch4Q12/SumOfSeries.cs) *Need to complete till Ch-9 Methods*
+7. [Sum of Integers](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q7/Ch4Q7/SumOfIntegers.cs) *(Need to complete till Ch-9 Methods)*
+8. [Find Greatest](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q8/Ch4Q8/FindGreatest.cs) *(Need to complete till Ch-9 Methods)*
+10. [Print Nums](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q10/Ch4Q10/PrintNums.cs) *(Need to complete till Ch-9 Methods)*
+11. [Fibonacci](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q11/Ch4Q11/Fibonacci.cs) *(Need to complete till Ch-9 Methods)*
+12. [Sum of Series](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch4/Ch4Q12/Ch4Q12/SumOfSeries.cs) *(Need to complete till Ch-9 Methods)*
 
 ### 5. Conditional Statements
 1. [Exchange Values](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch5/Ch5Q1/Ch5Q1/ExchangeValues.cs)
@@ -89,9 +89,9 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 13. [Binary to Decimal](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q13/Ch6Q13/BinaryToDecimal.cs)
 14. [Decimal to Hex](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q14/Ch6Q14/DecimalToHex.cs)
 15. [Hex to Decimal](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q15/Ch6Q15/HexToDecimal.cs)
-16. [Print Nums in Random Order](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q16/Ch6Q16/PrintNumsInRandomOrder.cs) *Ch-7 Arrays required*
+16. [Print Nums in Random Order](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q16/Ch6Q16/PrintNumsInRandomOrder.cs) *(Ch-7 Arrays required)*
 17. [GCD LCM](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q17/Ch6Q17/GCD_LCM.cs)
-18. [Spiral Matrix](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q18/Ch6Q18/SpiralMatrix.cs) *Ch-7 Arrays required*
+18. [Spiral Matrix](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch6/Ch6Q18/Ch6Q18/SpiralMatrix.cs) *(Ch-7 Arrays required)*
 
 ### 7. Arrays
 1. [Init Array](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q1/Ch7Q1/InitArray.cs)
@@ -122,7 +122,7 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 12. [Arabic to Roman](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q12/Ch8Q12/ArabicToRoman.cs)
 13. [Numeral System](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q13/Ch8Q13/NumeralSystem.cs)
 14. [Funny Datatypes](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q14/Ch8Q14/FunnyDataTypes.cs)
-15. [Representation of Float](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q15/Ch8Q15/RepresentationOfFloat.cs) *Ch-9 Methods required*
+15. [Representation of Float](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q15/Ch8Q15/RepresentationOfFloat.cs) *(Ch-9 Methods required)*
 
 ### 9. Methods
 1. [Greet](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch9/Ch9Q1/Ch9Q1/Greet.cs)
