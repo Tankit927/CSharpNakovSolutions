@@ -149,5 +149,8 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 7. [Permutation Without Repetition](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q7/Ch10Q7/PermutationWithoutRepetition.cs)
 8. [All Subsets With Certain Sum](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q8/Ch10Q8/AllSubsetsWithCertainSum.cs)
 9. [Check if Some Subset With Certain Sum Exist](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q9/Ch10Q9/CheckIfSomeSubetWithCertainSumExist.cs)
-
-...
+10. [Find all paths in matrix](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q10/Ch10Q10/FindAllPathsInMatrix.cs)
+11. *After Ch-17 Trees & Graphs*
+12. [Check whether path exist](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q12/Ch10Q12/CheckWhetherPathExist.cs)
+13. [Largest area](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q13/Ch10Q13/LargestArea.cs)
+14. [Traverse Directory](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q14/Ch10Q14/TraverseDir.cs)
