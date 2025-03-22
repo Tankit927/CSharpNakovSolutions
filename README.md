@@ -110,7 +110,15 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 14. [Longest Sequence of Equal String](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q14/Ch7Q14/LongestSequenceOfEqualString.cs)
 15. [Letter to Num](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q15/Ch7Q15/LetterToNum.cs)
 16. [Binary Search](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q16/Ch7Q16/BinarySearch.cs)
+17. [Merge sort](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q17/Ch7Q17/SortUsingMergeSort.cs) *(Need to complete till Ch-10 Recursion)*
+18. [Quick sort](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q18/Ch7Q18/SortUsingQuickSort.cs) *(Need to complete till Ch-10 Recursion)*
 19. [Find Primes](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q16/Ch7Q16/BinarySearch.cs)
+20. [Subset sum](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q20/Ch7Q20/SubsetSum.cs) *(Need to complete till Ch-10 Recursion)*
+21. [Subset of K elements with sum S](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q21/Ch7Q21/KElementSubsetWithSumS.cs) *(Need to complete till Ch-10 Recursion)*
+22. [Hidden longest increasing sequence problem](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q22/Ch7Q22/DiscoverHiddenLongestIncreasingSequence.cs) *(Need to complete till Ch-10 Recursion)*
+23. [Permutation with repetition](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q23/Ch7Q23/PermutationWithRepetition.cs) *(Need to complete till Ch-10 Recursion)*
+24. [Combination without repetition](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q24/Ch7Q24/CombinationWithoutRepetition.cs) *(Need to complete till Ch-10 Recursion)*
+25. [Largest area](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch7/Ch7Q25/Ch7Q25/LargestArea.cs) *(Need to complete till Ch-10 Recursion)*
 
 ### 8. Numeral Systems
 1. [Decimal to Binary](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch8/Ch8Q1/Ch8Q1/DecimalToBinary.cs)
