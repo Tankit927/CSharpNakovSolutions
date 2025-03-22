@@ -51,16 +51,13 @@ class TraverseDir
     static int[] ListEverything(string path, int[] entries, int depth=0)
     {
         // Method to recursively list all directories and files under given path
+        // entries[depth] contains no. of paths(files/directories) in current depth
+        // For example: entries[0] = 3 
+        // Means 3 paths(files/directories) at 0 depth
 
         ConsoleColor dirColor = ConsoleColor.Blue;
         ConsoleColor fileColor = ConsoleColor.Green;
         ConsoleColor errorColor = ConsoleColor.Red;
-
-        string space = "";
-        for(int i = 1; i <= depth * 2; i++)
-        {
-            space += " ";
-        }
 
         try
         {
@@ -110,19 +107,29 @@ class TraverseDir
     static void DrawLines(int depth, int[] entries)
     {
         // Method to draw lines for tree like formatting
+        //
+        // Loop from depth 0 to current depth and
+        // For every depth greater than 0
+        // Print 2 space
+        // Followed by "|" if there are remaining entries at that depth
+        // After ending loop print "__"
 
         Console.ResetColor();
 
         for(int i = 0; i <= depth && i < entries.Length; i++)
         {
-            for(int j = i > 0 ? 2 : 0; j > 0; j--)
+            if(i > 0)
             {
-                Console.Write(" ");
+                Console.Write(" " + " ");
             }
 
             if(entries[i] > 0)
             {
                 Console.Write("|");
+            }
+            else
+            {
+                Console.Write(" ");
             }
         }
 
@@ -133,19 +140,26 @@ class TraverseDir
     static void DrawVerticalLinesOnly(int depth, int[] entries)
     {
         // Method to draw lines for tree like formatting
+        //
+        // Same as DrawLines method
+        // But don't print "__" after ending loop
 
         Console.ResetColor();
 
         for(int i = 0; i <= depth && i < entries.Length; i++)
         {
-            for(int j = i > 0 ? 2 : 0; j > 0; j--)
+            if(i > 0)
             {
-                Console.Write(" ");
+                Console.Write(" " + " ");
             }
 
             if(entries[i] > 0)
             {
                 Console.Write("|");
+            }
+            else
+            {
+                Console.Write(" ");
             }
         }
 
