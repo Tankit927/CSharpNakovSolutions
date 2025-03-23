@@ -5,55 +5,48 @@ class TraverseDir
 {
     static void Main()
     {
-        string path = "";
-
         Console.WriteLine("Program to list all directories and files under given path.");
-        path = GetPath("Enter directory path: ");
+        DirectoryInfo dir = GetPath("Enter directory path: ");
         Console.WriteLine();
-        ListEverything(path);
+
+        // Console.WriteLine($"Full name: {dir.FullName}");
+        // Console.WriteLine($"Name: {dir.Name}");
+        // Console.WriteLine($"Parent dir: {dir.Parent}");
+        // Console.WriteLine($"Root: {dir.Root}");
+        
+        ListEverything(dir);
     }
 
 
-    static string GetPath(string prompt)
+    static DirectoryInfo GetPath(string prompt)
     {
-        // Method to user input path
-
-        string path = "";
-
-        do
+        // Method to user input directory path
+        
+        while(true)
         {
-            Console.Write(prompt);
-            path = Console.ReadLine();
-            if(!Path.IsPathFullyQualified(path) || !Path.IsPathRooted(path))
+            try
             {
-                Console.WriteLine($"\nEnter valid absolute directory path which does not end with {Path.DirectorySeparatorChar} or {Path.AltDirectorySeparatorChar}");
+                Console.Write(prompt);
+                DirectoryInfo dir = new DirectoryInfo(Console.ReadLine());
+                if(!dir.Exists)
+                {
+                    Console.WriteLine("\nPlease enter a valid directory path");
+                    continue;
+                }
+
+                return dir;
             }
-            else if(!Directory.Exists(path + @"\"))
+            catch(Exception e)
             {
-                Console.WriteLine("Given directory not found");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
-        while(!Path.IsPathFullyQualified(path) || !Path.IsPathRooted(path) || !Directory.Exists(path + @"\"));
-
-        return path;
     }
 
 
-    static void ListEverything(string path)
-    {
-        // Method to list all directories and files under given path
-
-        int[] entries = new int[1000];
-        ListEverything(path, entries);
-    }
-
-
-    static int[] ListEverything(string path, int[] entries, int depth=0)
+    static void ListEverything(DirectoryInfo currentDir, int depth=0)
     {
         // Method to recursively list all directories and files under given path
-        // entries[depth] contains no. of paths(files/directories) in current depth
-        // For example: entries[0] = 3 
-        // Means 3 paths(files/directories) at 0 depth
 
         ConsoleColor dirColor = ConsoleColor.Blue;
         ConsoleColor fileColor = ConsoleColor.Green;
@@ -61,69 +54,99 @@ class TraverseDir
 
         try
         {
-            IEnumerable<string> paths = Directory.EnumerateFileSystemEntries(path);
-            entries[depth] = paths.Count();
-            DirectoryInfo dir = new DirectoryInfo(path);
-
+            FileSystemInfo[] infos = currentDir.GetFileSystemInfos();
             Console.ForegroundColor = dirColor;
-            Console.WriteLine(dir.Name);
+            Console.WriteLine(currentDir.Name);
+
             if(depth == 0)
             {
                 Console.ResetColor();
                 Console.WriteLine("|");
             }
 
-            foreach (string sPath in paths)
+            foreach (FileSystemInfo i in infos)
             {   
-                if (Directory.Exists(sPath + @"\"))
+                if (i is DirectoryInfo)
                 {
-                    DrawLines(depth, entries);
-                    entries[depth] -= 1;
-                    entries = ListEverything(sPath, entries, depth+1);
-                    DrawVerticalLinesOnly(depth, entries);
+                    DrawLines(depth, i);
+                    DirectoryInfo dir = (DirectoryInfo)i;
+                    ListEverything(dir, depth+1);
                 }
-                else if (File.Exists(sPath))
+                else if (i is FileInfo)
                 {
-                    DrawLines(depth, entries);
-                    entries[depth] -= 1;
+                    DrawLines(depth, i);
                     Console.ForegroundColor = fileColor;
-                    Console.WriteLine(Path.GetFileName(sPath));
+                    FileInfo file = (FileInfo)i;
+                    Console.WriteLine(file.Name);
                 }
             }
 
             Console.ResetColor();
-            return entries;
         }
         catch(Exception e)
         {
             Console.ForegroundColor = errorColor;
             Console.WriteLine($"Error: {e.Message}");
             Console.ResetColor();
-            return entries;
         }
     }
 
 
-    static void DrawLines(int depth, int[] entries)
+    static void DrawLines(int depth, FileSystemInfo info)
     {
         // Method to draw lines for tree like formatting
         //
         // Loop from depth 0 to current depth and
         // For every depth greater than 0
         // Print 2 space
-        // Followed by "|" if there are remaining entries at that depth
-        // After ending loop print "__"
+        // Print "|" if child is not the last element of parent at i < depth
+        // After ending loop print "\b|__"
 
         Console.ResetColor();
+        if(info == null)
+        {
+            return;
+        }
 
-        for(int i = 0; i <= depth && i < entries.Length; i++)
+        for(int i = 0; i <= depth; i++)
         {
             if(i > 0)
             {
                 Console.Write(" " + " ");
             }
 
-            if(entries[i] > 0)
+            DirectoryInfo childDir = null;
+            FileInfo childFile = null;
+            DirectoryInfo parent = null;
+            FileSystemInfo child = null;
+            if(info is DirectoryInfo)
+            {
+                childDir = (DirectoryInfo)info;
+                for(int j = depth-i; j >= 1; j--)
+                {
+                    childDir = childDir.Parent;
+                }
+            }
+            else
+            {
+                childFile = (FileInfo)info;
+                childDir = childFile.Directory;
+                for(int j = depth-i; j > 1; j--)
+                {
+                    childDir = childDir.Parent;
+                }
+            }
+
+            child = childDir == null ? childFile : childDir;
+            parent = childDir.Parent;
+
+            // Get an array of all childrens(files/directories) of parent directory
+            FileSystemInfo[] infos = parent.GetFileSystemInfos();
+
+            // Print "|" if child is not the last element but present in parent directory
+            // and i(current depth) < depth
+            int indexOfChild = GetIndexOf(child, infos);
+            if(i < depth && indexOfChild < infos.Length-1)
             {
                 Console.Write("|");
             }
@@ -133,36 +156,22 @@ class TraverseDir
             }
         }
 
-        Console.Write("__");
+        Console.Write("\b|__");
     }
 
 
-    static void DrawVerticalLinesOnly(int depth, int[] entries)
+    static int GetIndexOf(FileSystemInfo info, FileSystemInfo[] infos)
     {
-        // Method to draw lines for tree like formatting
-        //
-        // Same as DrawLines method
-        // But don't print "__" after ending loop
+        // Method to return index of info if found otherwise return -1
 
-        Console.ResetColor();
-
-        for(int i = 0; i <= depth && i < entries.Length; i++)
+        for(int i = 0; i < infos.Length; i++)
         {
-            if(i > 0)
+            if(info.FullName == infos[i].FullName)
             {
-                Console.Write(" " + " ");
-            }
-
-            if(entries[i] > 0)
-            {
-                Console.Write("|");
-            }
-            else
-            {
-                Console.Write(" ");
+                return i;
             }
         }
 
-        Console.WriteLine();
+        return -1;
     }
 }
