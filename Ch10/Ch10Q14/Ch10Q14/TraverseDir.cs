@@ -8,11 +8,6 @@ class TraverseDir
         Console.WriteLine("Program to list all directories and files under given path.");
         DirectoryInfo dir = GetPath("Enter directory path: ");
         Console.WriteLine();
-
-        // Console.WriteLine($"Full name: {dir.FullName}");
-        // Console.WriteLine($"Name: {dir.Name}");
-        // Console.WriteLine($"Parent dir: {dir.Parent}");
-        // Console.WriteLine($"Root: {dir.Root}");
         
         ListEverything(dir);
     }
@@ -68,13 +63,14 @@ class TraverseDir
             {   
                 if (i is DirectoryInfo)
                 {
-                    DrawLines(depth, i);
+                    DrawLinesVerticalAndHorizontal(depth, i);
                     DirectoryInfo dir = (DirectoryInfo)i;
                     ListEverything(dir, depth+1);
+                    DrawLinesVerticalOnly(depth, i); // Comment out this line for compact output
                 }
                 else if (i is FileInfo)
                 {
-                    DrawLines(depth, i);
+                    DrawLinesVerticalAndHorizontal(depth, i);
                     Console.ForegroundColor = fileColor;
                     FileInfo file = (FileInfo)i;
                     Console.WriteLine(file.Name);
@@ -92,15 +88,9 @@ class TraverseDir
     }
 
 
-    static void DrawLines(int depth, FileSystemInfo info)
+    static void DrawLines(int depth, FileSystemInfo info, bool verticalOnly=false)
     {
         // Method to draw lines for tree like formatting
-        //
-        // Loop from depth 0 to current depth and
-        // For every depth greater than 0
-        // Print 2 space
-        // Print "|" if child is not the last element of parent at i < depth
-        // After ending loop print "\b|__"
 
         Console.ResetColor();
         if(info == null)
@@ -115,10 +105,32 @@ class TraverseDir
                 Console.Write(" " + " ");
             }
 
-            DirectoryInfo childDir = null;
+            // Get child at depth i and its parent info depth is depth
+            // For example:
+            // For i = 0, depth = 0
+            // child = info
+            //
+            // For i = 0, depth = 1
+            // child = info
+            // child = child.Parent (loop 1 time)
+            //
+            // For i = 1, depth = 1
+            // child = info
+            //
+            // For i = 0, depth = 2
+            // child = info
+            // child = child.Parent (loop 2 times)
+            //
+            // For i = 1, depth = 2
+            // child = info
+            // child = child.Parent (loop 1 time)
+            //
+            // For i = 2, depth = 2
+            // child = info
+            DirectoryInfo childDir;
             FileInfo childFile = null;
-            DirectoryInfo parent = null;
-            FileSystemInfo child = null;
+            DirectoryInfo parent;
+            FileSystemInfo child;
             if(info is DirectoryInfo)
             {
                 childDir = (DirectoryInfo)info;
@@ -143,20 +155,39 @@ class TraverseDir
             // Get an array of all childrens(files/directories) of parent directory
             FileSystemInfo[] infos = parent.GetFileSystemInfos();
 
-            // Print "|" if child is not the last element but present in parent directory
-            // and i(current depth) < depth
+            // When verticalOnly == false
+            // Print "|" if child is not the last element in parent directory
+            // when i(current depth) < depth
+            // Or
+            // when i(current depth == depth)
+            //
+            // else when verticalOnly == true
+            // Print "|" if child is not the last element in parent directory
+            // irrespective of i and depth
             int indexOfChild = GetIndexOf(child, infos);
-            if(i < depth && indexOfChild < infos.Length-1)
+            if(!verticalOnly)
             {
-                Console.Write("|");
+                if((i < depth && indexOfChild < infos.Length-1) || i == depth)
+                {
+                    Console.Write("|");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
             }
             else
             {
-                Console.Write(" ");
+                if(indexOfChild < infos.Length-1)
+                {
+                    Console.Write("|");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
             }
         }
-
-        Console.Write("\b|__");
     }
 
 
@@ -173,5 +204,25 @@ class TraverseDir
         }
 
         return -1;
+    }
+
+
+    static void DrawLinesVerticalAndHorizontal(int depth, FileSystemInfo info)
+    {
+        // Method to draw vertical and horizontal lines
+        // Vertical lines are drawn by DrawLines() method
+
+        DrawLines(depth, info);
+        Console.Write("__");
+    }
+
+
+    static void DrawLinesVerticalOnly(int depth, FileSystemInfo info)
+    {
+        // Method to draw vertical lines only
+        // Vertical lines are drawn by DrawLines() method
+
+        DrawLines(depth, info, verticalOnly:true);
+        Console.WriteLine();
     }
 }
