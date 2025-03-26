@@ -162,3 +162,20 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 12. [Check whether path exist](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q12/Ch10Q12/CheckWhetherPathExist.cs)
 13. [Largest area](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q13/Ch10Q13/LargestArea.cs)
 14. [Traverse Directory](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch10/Ch10Q14/Ch10Q14/TraverseDir.cs)
+
+### 11. Creating & Using Objects
+1. [Leap Year](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q1/Ch11Q1/LeapYear.cs)
+2. [Random nums](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q2/Ch11Q2/RandomNums.cs)
+3. [Day](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q3/Ch11Q3/Day.cs)
+4. [Time passed since boot](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q4/Ch11Q4/TimePasses.cs)
+5. [Pythagoras Theorem](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q5/Ch11Q5/PythagorasTheorem.cs)
+6. [Area of triangle](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q6/Ch11Q6/AreaOfTriangle.cs)
+7. [Main program](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q7/Ch11Q7/Program.cs)
+   - [Cat class](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q7/Ch11Q7/CreatingAndUsingObjects/Cat.cs)
+   - [Sequence class](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q7/Ch11Q7/CreatingAndUsingObjects/Sequence.cs)
+8. [Main program](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q8/Ch11Q8/Program.cs)
+   - [Cat class](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q8/Ch11Q8/CreatingAndUsingObjects/Cat.cs)
+9. [Working days](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q9/Ch11Q9/Workdays.cs)
+10. [Sum](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q10/Ch11Q10/Sum.cs)
+11. [Fake Ads](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q11/Ch11Q11/FakeAds.cs)
+12. *After Ch-16 Linear Data Structures*
