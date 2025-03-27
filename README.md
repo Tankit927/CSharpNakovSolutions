@@ -179,3 +179,9 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 10. [Sum](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q10/Ch11Q10/Sum.cs)
 11. [Fake Ads](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q11/Ch11Q11/FakeAds.cs)
 12. *After Ch-16 Linear Data Structures*
+
+### 12. Exception Handling
+7. [Square root](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch12/Ch12Q7/Ch12Q7/SquareRoot.cs)
+8. [Read number in certain range](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch12/Ch12Q8/Ch12Q8/ReadNumberInCertainRange.cs)
+
+*Q9 - Q13 After Ch-15 Text Files*
