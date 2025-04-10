@@ -12,6 +12,7 @@
 // ********* ***.
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 class Censor
 {
@@ -24,11 +25,62 @@ class Censor
         string forbiddenWords = GetString("Enter comma separated forbidden words: ");
 
         Console.WriteLine();
-        Console.WriteLine("Given text:");
-
-        Console.WriteLine();
-        Console.WriteLine("Censored text:");
+        Console.WriteLine("Censored text manually:");
         Console.WriteLine(CensorWords(s, forbiddenWords));
+
+        string pattern = GetPattern(forbiddenWords);
+        MatchCollection matches = Regex.Matches(s, pattern);
+        string censored = Regex.Replace(s, pattern, m => new string('*', m.Length));
+        Console.WriteLine();
+        Console.WriteLine("Censored using regex:");
+        Console.WriteLine(censored);
+    }
+
+
+    static string GetPattern(string commaSepWords)
+    {
+        // Method to generate regex pattern from comma separated words
+        // pattern: @"(?i:\b{word}\b)"
+
+        StringBuilder sb = new();
+        int count = 1;
+
+        foreach(string word in commaSepWords.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+        {
+            if(count > 1)
+            {
+                sb = sb.Append('|');
+            }
+            if(IsAlphaNumericOrUnderscore(word[0]))
+            {
+                sb = sb.Append(@"(?i:\b");
+            }
+            else
+            {
+                sb = sb.Append(@"(?i:\B");
+            }
+
+            if(IsAlphaNumericOrUnderscore(word[^1]))
+            {
+                sb = sb.Append($@"{word}\b)");
+            }
+            else
+            {
+                sb = sb.Append($@"{word}\B)");
+            }
+
+            count += 1;
+        }
+
+        return sb.ToString();
+    }
+
+
+    static bool IsAlphaNumericOrUnderscore(char c)
+    {
+        // Method to determine whether given character is alphanumeric or underscore
+
+        return char.IsLetterOrDigit(c) || c == '_';
     }
 
 

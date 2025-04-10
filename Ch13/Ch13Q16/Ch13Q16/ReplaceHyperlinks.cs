@@ -13,6 +13,7 @@
 // courses.</p>
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 class ReplaceHyperlinks
 {
@@ -22,7 +23,21 @@ class ReplaceHyperlinks
         string s = GetString("Enter html: ");
 
         Console.WriteLine();
+        Console.WriteLine("Manually:");
         Console.WriteLine(Replace_href_With_url(s));
+
+        string pattern = @"</a>";
+        string result = Regex.Replace(s, pattern, "[/URL]");
+
+        // pattern2 to match <a href="http://someURL/home">
+        // (<a\s+href\s*=\s*"") - to match <a href="
+        // (\b.*?) - to match URL
+        // ("") - to match "
+        string pattern2 = @"(<a\s+href\s*=\s*"")(\b.*?)("")";
+        result = Regex.Replace(result, pattern2, m => $"[URL={m.Groups[2].Value}]");
+        Console.WriteLine();
+        Console.WriteLine("Using regex:");
+        Console.WriteLine(result);
     }
 
 

@@ -10,6 +10,7 @@
 
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 class UpperCaseWithinTags
 {
@@ -32,10 +33,10 @@ class UpperCaseWithinTags
                 s = GetString("Enter string: ");
 
                 Console.WriteLine();
-                string startTag = GetString("Start tag: ");
+                string tag = GetTag("Enter tag: ");
 
-                Console.WriteLine();
-                string endTag = GetString("End tag: ");
+                string startTag = $"<{tag}>";
+                string endTag = $"</{tag}>";
 
                 Console.WriteLine();
                 Console.WriteLine("Given string:");
@@ -44,8 +45,21 @@ class UpperCaseWithinTags
                 string result = ConvertToUpper(s, startTag, endTag);
 
                 Console.WriteLine();
-                Console.WriteLine("Formatted string:");
+                Console.WriteLine("Formatted string manually:");
                 Console.WriteLine(result);
+
+                // pattern to match: "<tag>Some text</tag>"
+                // (<{tag}>) - start tag
+                // (.*?) - match anything except \n (lazy)
+                // (</{tag}>) - end tag
+                string pattern = $@"(<{tag}>)(.*?)(</{tag}>)";
+                string replacement = @"$2";
+
+                // It works. Idk how?
+                string result2 = Regex.Replace(s, pattern, m => m.Result(replacement).ToUpper());
+                Console.WriteLine();
+                Console.WriteLine("Formatted string using regular expression:");
+                Console.WriteLine(result2);
                 break;
             }
             catch(ApplicationException e)
@@ -57,11 +71,65 @@ class UpperCaseWithinTags
     }
 
 
+    static string GetTag(string prompt)
+    {
+        // Method to user input tag
+        // tag should not contain: <, >, /
+
+        string? s;
+        char[] invalidChars = ['<', '>', '/'];
+
+        do
+        {
+            Console.Write(prompt);
+            s = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(s) || Contains(s, invalidChars))
+            {
+                Console.WriteLine("\nEnter something that is not: ");
+                PrintCharArray(invalidChars);
+            }
+        }
+        while(string.IsNullOrWhiteSpace(s));
+
+        return s;
+    }
+
+
+    static void PrintCharArray(char[] chars)
+    {
+        // Method to print given array
+
+        foreach(char c in chars)
+        {
+            Console.Write($"{c} ");
+        }
+
+        Console.WriteLine();
+    }
+
+
+    static bool Contains(string s, params char[] chars)
+    {
+        // Method to check whether given string contains given characters
+        // Returns true if any of the characters is found
+
+        foreach(char c in chars)
+        {
+            if(s.Contains(c))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     static string GetString(string prompt)
     {
         // Method to user input string
 
-        string s;
+        string? s;
 
         do
         {

@@ -11,6 +11,7 @@
 // We will move out of it in 5 days.
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 class ExtractSentences
 {
@@ -21,11 +22,32 @@ class ExtractSentences
 
         Console.WriteLine();
         string word = GetString("Enter word: ");
-        word = " " + word + " ";
+        string wordBetweenSpace = " " + word + " ";
+
+        // string s = "We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all day. We will move out of it in 5 days. In it we had orgy. I am glad that I go in. In there every pp was in hole. Aaaaaa! my pp got zipped in the zip.IN my pant. Get in    .";
+        // string word = "in";
+        // Console.WriteLine(s);
 
         Console.WriteLine();
-        Console.WriteLine($"Sentences containing given word {word}: ");
-        Console.WriteLine(ExtractSentencesWithCertainWord(s, word));
+        Console.WriteLine($"Sentences containing given word {word}:");
+        Console.WriteLine("Found manually:");
+        Console.WriteLine(ExtractSentencesWithCertainWord(s, wordBetweenSpace));
+
+        // Pattern to match every sentence which include " {word} " or "{word} " or "{word}."
+        // irrespective of case
+        // Everything between two "." is considered a sentence
+        // "\b[^\.]*" - to match everything before the {word} but after "." or if its first sentence
+        // "(?i:\b{word}\b){{1,}}" - to match word at least once
+        // "[^\.]*\." - to match everything after {word} up till "."
+        string pattern = $@"\b[^\.]*(?i:\b{word}\b){{1,}}[^\.]*\.";
+        Console.WriteLine();
+        Console.WriteLine("Found using regular expression:");
+        MatchCollection matches = Regex.Matches(s, pattern);
+        foreach(Match match in matches)
+        {
+            Console.WriteLine(match);
+        }
+
     }
 
 

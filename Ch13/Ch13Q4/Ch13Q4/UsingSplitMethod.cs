@@ -3,6 +3,8 @@
 // Example: one\two\three.
 // Note: In C# backslash is an escaping character.
 
+using System.Text.RegularExpressions;
+
 class UsingSplitMethod
 {
     static void Main()
@@ -14,7 +16,18 @@ class UsingSplitMethod
         char c = GetChar("Enter splitting character: ");
 
         Console.WriteLine();
+        Console.WriteLine("Splitting manually:");
         SplitAndPrintSubstrings(s,c);
+
+        Console.WriteLine();
+        Console.WriteLine("Using regular expression:");
+        string pattern = (c == '\\') ? @"\\" : c.ToString();
+        foreach(string myString in Regex.Split(s, pattern))
+        {
+            Console.Write($"{myString} ");
+        }
+
+        Console.WriteLine();
     }
 
 
@@ -44,7 +57,7 @@ class UsingSplitMethod
     {
         // Method to user input string
 
-        string s;
+        string? s;
 
         do
         {
@@ -72,5 +85,7 @@ class UsingSplitMethod
         {
             Console.Write($"{substring} ");
         }
+
+        Console.WriteLine();
     }
 }

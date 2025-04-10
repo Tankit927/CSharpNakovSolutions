@@ -1,17 +1,20 @@
 ﻿// Write a program that reads a string, reverse it and prints it to the 
 // console. For example: "introduction" --> "noitcudortni".
+//
+// Idk, how to reverse string letter by letter using regular expression
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 class ReverseString
 {
     static void Main()
     {
         Console.WriteLine("Program to reverse given string");
-        string s = GetString("Enter something: ");
+        string myString = GetString("Enter something: ");
 
         Console.WriteLine();
-        Console.WriteLine(Reverse(s));
+        Console.WriteLine(Reverse(myString));
     }
 
 
@@ -19,7 +22,7 @@ class ReverseString
     {
         // Method to user input string
 
-        string s;
+        string? s;
 
         do
         {

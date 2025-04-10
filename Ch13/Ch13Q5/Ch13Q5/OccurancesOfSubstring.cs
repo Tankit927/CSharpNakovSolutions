@@ -6,6 +6,8 @@
 // The result is 9 occurrences.
 
 
+using System.Text.RegularExpressions;
+
 class OccurancesOfSubstring
 {
     static void Main()
@@ -17,7 +19,14 @@ class OccurancesOfSubstring
         string sub = GetString("Enter substring: ");
 
         Console.WriteLine();
+        Console.WriteLine("Manually counting:");
         Console.WriteLine($"No. of occurances: {FindNumberOfOccurances(s, sub)}");
+
+        string pattern = sub.Equals("\\") ? @"(?i)\\" : @"(?i)" + sub;
+        MatchCollection matches = Regex.Matches(s, pattern);
+        Console.WriteLine();
+        Console.WriteLine("Using regular expression:");
+        Console.WriteLine($"No. of occurances: {matches.Count}");
     }
 
 
@@ -25,7 +34,7 @@ class OccurancesOfSubstring
     {
         // Method to user input string
 
-        string s;
+        string? s;
 
         do
         {

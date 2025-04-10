@@ -7,6 +7,8 @@
 // [resource]="/video"
 
 
+using System.Text.RegularExpressions;
+
 class ParseURL
 {
     static void Main()
@@ -17,9 +19,19 @@ class ParseURL
 
         string[] url = GetURL(s);
 
+        Console.WriteLine();
+        Console.WriteLine("Manually:");
         Console.WriteLine($"[protocol]: {url[0]}");
         Console.WriteLine($"[server]: {url[1]}");
         Console.WriteLine($"[resource]: {url[2]}");
+        
+        string pattern = @"(?'protocol'^\w+)://(?'server'[\w\.]+)(?'resource'.+$)";
+        Match match = Regex.Match(s, pattern);
+        Console.WriteLine();
+        Console.WriteLine("Using regex:");
+        Console.WriteLine($"[protocol]: {match.Groups["protocol"].Value}");
+        Console.WriteLine($"[server]: {match.Groups["server"].Value}");
+        Console.WriteLine($"[resource]: {match.Groups["resource"].Value}");
     }
 
 
