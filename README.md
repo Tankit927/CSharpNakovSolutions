@@ -180,8 +180,33 @@ My solutions to exercises in [Fundamentals of Computer Programming With C# by Sv
 11. [Fake Ads](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch11/Ch11Q11/Ch11Q11/FakeAds.cs)
 12. *After Ch-16 Linear Data Structures*
 
-### 12. Exception Handling
+### 12. Exception Handling *(Q9 - Q13 After Ch-15 Text Files)*
 7. [Square root](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch12/Ch12Q7/Ch12Q7/SquareRoot.cs)
 8. [Read number in certain range](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch12/Ch12Q8/Ch12Q8/ReadNumberInCertainRange.cs)
 
-*Q9 - Q13 After Ch-15 Text Files*
+### 13. Strings & text processing
+2. [Reverse string](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q2/Ch13Q2/ReverseString.cs) *(yet to use regex)*
+3. [Check parentheses](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q3/Ch13Q3/CheckParentheses.cs)
+4. [Using split method](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q4/Ch13Q4/UsingSplitMethod.cs)
+5. [No. of occurances of substring](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q5/Ch13Q5/OccurancesOfSubstring.cs)
+6. [Uppercase everything within tags](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q6/Ch13Q6/UpperCaseWithinTags.cs)
+7. [Suffix](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q7/Ch13Q7/Suffix.cs)
+8. [String to unicode array](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q8/Ch13Q8/StringToUnicodeArray.cs)
+9. [Encryption using XOR](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q9/Ch13Q9/EncryptionUsingXOR.cs)
+10. [Extract sentences](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q10/Ch13Q10/ExtractSentences.cs)
+11. [Censor](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q11/Ch13Q11/Censor.cs)
+12. [Formatting nums](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q12/Ch13Q12/FormattingNum.cs)
+13. [Parse URL](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q12/Ch13Q12/FormattingNum.cs)
+14. [Reversing sentences](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q14/Ch13Q14/ReversingSentence.cs)
+15. *After Ch-18 Dictionaries, hash tables & sets*
+16. [Replace hyperlinks](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q16/Ch13Q16/ReplaceHyperlinks.cs)
+17. [Days](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q17/Ch13Q17/Days.cs)
+18. [Add time](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q18/Ch13Q18/AddTime.cs)
+19. [Emails](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q19/Ch13Q19/Emails.cs)
+20. [Dates](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q20/Ch13Q20/Dates.cs)
+21. [Palindromes](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q21/Ch13Q21/Palindromes.cs)
+22. [Letters](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q22/Ch13Q22/Letters.cs)
+23. *Same as Q22*
+24. [No repetition](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q24/Ch13Q24/NoRepetition.cs)
+25. [Sorted words](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q25/Ch13Q25/SortedWords.cs)
+26. [Extract text form HTML](https://github.com/Tankit927/CSharpNakovSolutions/blob/main/Ch13/Ch13Q26/Ch13Q26/ExtractTextFromHTML.cs) *(yet to use regex)*
