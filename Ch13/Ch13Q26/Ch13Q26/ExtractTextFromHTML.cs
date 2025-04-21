@@ -26,16 +26,18 @@ class ExtractTextFromHTML
 
         string text = ExtractText(s);
         Console.WriteLine();
+        Console.WriteLine("Extract text manually:");
         Console.WriteLine(text);
 
-        // Pattern below doesn't work for nested tags
-        // string pattern = @"(?'Open'<(?'Tag'[^<>]+)>)(?'Text'[^<>]+)(?'Close-Open'</(\k'Tag')>)";
-        // MatchCollection matches = Regex.Matches(s, pattern);
-        // Console.WriteLine();
-        // foreach(Match match in matches)
-        // {
-        //     Console.WriteLine(match);
-        // }
+        // Pattern to match text between > and <
+        string pattern = @"(?'Open'>)([^<>]+)(?'Close-Open'<)";
+        MatchCollection matches = Regex.Matches(s, pattern);
+        Console.WriteLine();
+        Console.WriteLine("Extract text using regex:");
+        foreach(Match match in matches)
+        {
+            Console.WriteLine(match.Groups[1].Value);
+        }
     }
 
 
